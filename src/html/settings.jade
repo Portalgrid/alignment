@@ -1,0 +1,106 @@
+-var tints = ["#ff0000","#00ff00","#0000ff","#000000","#ffffff","#555555","#f3ba00"]
+
+block palette
+
+	#settings_panel.hidden
+
+		p
+			input#mirrored(type="checkbox" checked)
+			| Mirrored rays
+
+		p
+			input#yasr(type="checkbox" checked)
+			| Remove y axis before drawing shapes
+
+		p
+			input#rasr(type="checkbox" checked)
+			| Remove rays before drawing shapes
+
+		if false
+
+			p
+				span#peek(title="Hide/reveal the color palette") &laquo;
+				u Color Selectors
+
+		table#palette
+			tr
+				td(valign="top" colspan="2")
+			tr
+				td(valign="top" style="width:180px") X-axis
+				td.picked(valign="top")
+					each rgb in tints
+						span.rgb(style="background-color:" + rgb) &nbsp;
+			tr
+				td(valign="top") Y-axis
+				td.picked(valign="top")
+					each rgb in tints
+						span.rgb(style="background-color:" + rgb) &nbsp;
+
+			tr
+				td(valign="top")
+					input#clipping(type="checkbox" checked)
+					| Rays
+				td.picked(valign="top")
+					each rgb in tints
+						span.rgb(style="background-color:" + rgb) &nbsp;
+
+			tr
+				td(valign="top")
+					input#hzcent(type="checkbox")
+					| Horz centerline
+				td.picked(valign="top")
+					each rgb in tints
+						span.rgb(style="background-color:" + rgb) &nbsp;
+
+			tr
+				td(valign="top")
+					input#dc(type="checkbox")
+					| Circle
+				td.picked(valign="top")
+					each rgb in tints
+						span.rgb(style="background-color:" + rgb) &nbsp;
+			tr
+				td(valign="top")
+					input#dg(type="checkbox")
+					| Hexagram
+				td.picked(valign="top")
+					each rgb in tints
+						span.rgb(style="background-color:" + rgb) &nbsp;
+			tr
+				td(valign="top")
+					input#dh(type="checkbox")
+					| Hexagon
+				td.picked(valign="top")
+					each rgb in tints
+						span.rgb(style="background-color:" + rgb) &nbsp;
+			tr
+				td(valign="top")
+					input#ds(type="checkbox")
+					| 6-pointed star
+				td.picked(valign="top")
+					each rgb in tints
+						span.rgb(style="background-color:" + rgb) &nbsp;
+			tr
+				td(valign="top")
+					input#dq(type="checkbox")
+					| Square
+				td.picked(valign="top")
+					each rgb in tints
+						span.rgb(style="background-color:" + rgb) &nbsp;
+
+		div(style="padding-top:0.7em")
+			input#gdrec(type="checkbox")
+			| Golden rectangle (for hexagram / hexagon)
+
+		p
+			| Pixel width: &nbsp;
+			input#pxthick(type="input" size="1")
+
+		if false
+			p
+				input#ps(type="checkbox")
+				| Save my selections
+
+		button(onclick="return onSaveSettings()") Save &amp; close
+
+		p(style="padding-bottom:1em")

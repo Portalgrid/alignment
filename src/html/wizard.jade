@@ -1,0 +1,16 @@
+block wizard
+
+	table#wzw.hidden
+
+		tr
+
+			td(valign="top")
+
+				.wizard Click two points on the image to establish the baseline
+
+				.wizard.disabled Position the y-axis then click the image
+
+				.wizard.disabled Position the rays then click the image
+
+				if false
+					button.hidden(onclick="return lewis.on('reset')") Reset

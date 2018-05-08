@@ -1,0 +1,59 @@
+extends ./layout
+
+block content
+
+	section
+
+		p
+
+			input(type="file" onchange="onSelected()")
+
+	section#wtool.hidden
+
+		div(style="display:flex")
+
+			div(style="width:30%")
+
+				#settings
+
+					span#xpd &#x25bc;
+
+					span Settings panel
+
+			div(style="width:70%")
+
+				button#save(onclick="onSaveFinished()" style="margin:0") Save
+
+				button#reset(onclick="onReset()" style="margin:0") Reset
+
+		p
+
+			include ./wizard
+
+		p
+
+			include ./settings
+
+	#png
+
+	#canvas
+
+	p#kybd.hidden Use 'a', 's', 'k' and 'l' to fine tune the horizontal position of the rays and complex composite shapes.|Click this text to remove.
+
+	p#copy &copy; William Lewis. All Rights Reserved.
+
+block scripts
+
+	script(type="text/javascript" src="js/konva.js")
+	script(type="text/javascript" src="js/math.js")
+	script(type="text/javascript" src="js/css.js")
+
+	if false
+		script(type="text/javascript" src="js/index.js")
+
+	if true
+
+		script(type="text/javascript" src="js/canvas.src.js?{{ UNIQY }}")
+		script(type="text/javascript" src="js/settings.src.js?{{ UNIQY }}")
+		script(type="text/javascript" src="js/ux.src.js?{{ UNIQY }}")
+		script(type="text/javascript" src="js/index.src.js?{{ UNIQY }}")
